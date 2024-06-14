@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jk.css" />
+        <title>Trabajo</title>
+    </head>
+    <style>
+        body{
+            background-color: #000000;
+        }
+        h1{
+            margin: 10px auto;
+            max-width: 20%;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #fca311;
+        }
+        td{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        table{
+            border-radius: 10px;
+            padding: 5px;
+            text-align: center;
+            margin: auto;
+            background-color: #14213d;
+        }
+        th{
+            border-radius: 10px;
+            background-color: #e5e5e5;
+        }
+    </style>
+    <body>
+        <h1>Personajes</h1>
+        <table>
+            <tr>
+                <th>nombre</th>
+                <th>Estado</th>
+                <th>raza</th>
+                <th>genero</th>
+                <th>ubicacion</th>
+                <th>id</th>
+            </tr>
+            {% for character in response.results %}
+            <tr>
+                <td>
+                    {{ character.name }}
+                </td>
+                <td>
+                    {{ character.status }}
+                </td>
+                <td>
+                    {{ character.species }}
+                </td>
+                <td>
+                    {{ character.gender }}
+                </td>
+                <td>
+                    {{ character.location.name }}
+                </td>
+                <td>
+                    {{ character.id }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
